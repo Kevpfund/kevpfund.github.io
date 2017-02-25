@@ -1,34 +1,40 @@
 <html>
 
 <head>
-<title>WebsiteBuilders Contact Forum</title>
+<title>WebsiteBuilders Contact Form</title>
 </head>
 
 <body>
-<h1>WebsiteBuilders Contact Forum</h1>
-<h2>First Name</h2><input type="text" id="First Name" >
+<h1>WebsiteBuilders Contact Form</h1>
+<h2>First Name</h2><input type="text" id="First_Name" >
 <br>
 <br>
-<h2>Last Name</h2><input type="text" id="Last Name" >
+<h2>Last Name</h2><input type="text" id="Last_Name" >
 <br>
 <br>
 <h2>Email</h2><input type="text" id="Email" >
-<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
-	<div class="row">
-		<label for="name">Your name:</label><br />
-		<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
-	</div>
-	<div class="row">
-		<label for="email">Your email:</label><br />
-		<input id="email" class="input" name="email" type="text" value="" size="30" /><br />
-	</div>
-	<div class="row">
-		<label for="message">Your message:</label><br />
-		<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
-	</div>
-	<input id="submit_button" type="submit" value="Send email" />
-</form>						
-
+<br>
+<br>
+<h2>Description</h2> <textarea id="Description" rows="10" ></textarea>
+<button type="button" id="Submit">Submit</button>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script>
+ 
+    
+    $( "#Submit" ).click(function() {
+     var FN = $('#First_Name').val();
+     var LN = $('#Last_Name').val();
+     var EM = $('#Email').val();
+     var DS = $('#Description').val();
+     alert("First Name: " + FN +
+            "               Last Name: " + LN +
+            "               Email: " + EM +
+            "               Description: " + DS            );
+});
+  </script>
 </body>
 
 </html>
