@@ -18,6 +18,21 @@
 <h2>Description</h2> <textarea id="Description" rows="10" ></textarea>
 <br>
 <button type="button" id="Submit">Submit</button>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC1kq0mcTNaPIwTGbO5MR8KvMr7WpRtHZs",
+    authDomain: "websitebuilders-ce0b9.firebaseapp.com",
+    databaseURL: "https://websitebuilders-ce0b9.firebaseio.com",
+    storageBucket: "websitebuilders-ce0b9.appspot.com",
+    messagingSenderId: "665164843283"
+  };
+  firebase.initializeApp(config);
+  
+  
+</script>
 <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -30,10 +45,23 @@
      var LN = $('#Last_Name').val();
      var EM = $('#Email').val();
      var DS = $('#Description').val();
+     /*
      alert("First Name: " + FN +
             "               Last Name: " + LN +
             "               Email: " + EM +
             "               Description: " + DS            );
+    */        
+            
+    var msg = {
+        First_Name:FN,
+        Last_Name:LN,
+        Email:EM,
+        Description:DS
+    };
+    var ref = firebase.database().ref('/clients');
+    var ref = ref.push(msg, function () {
+        alert("Your information has been saved, thank you!")
+    });
 });
   </script>
 </body>
